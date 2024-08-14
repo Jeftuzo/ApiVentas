@@ -1,5 +1,4 @@
-﻿
-using ApiVentas.Entities;
+﻿using ApiVentas.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiVentas.Controllers
@@ -8,18 +7,8 @@ namespace ApiVentas.Controllers
     [Route("api/[controller]")]
     public class ProductosController : ControllerBase
     {
-
         public ProductosController()
         {
-            //_productos = new List<Producto>();
-
-            //_productos.Add(new Producto()
-            //{
-            //    Id = 1,
-            //    Codigo = 1,
-            //    Descripcion = "Rockaccino",
-            //    PrecioUnitario = 70.00m
-            //});
         }
 
         [HttpGet]
@@ -32,6 +21,12 @@ namespace ApiVentas.Controllers
         public ActionResult CrearProducto([FromBody]Producto producto)
         {
             Productos.ProductosAgregados.Add(producto);
+            return Ok();
+        }
+        [HttpPut]
+        public ActionResult Actualizar([FromBody]Producto producto)
+        {
+            var productoEnLista = Productos.ProductosAgregados.FirstOrDefault(p => p.Id == producto.Id);
             return Ok();
         }
     }
