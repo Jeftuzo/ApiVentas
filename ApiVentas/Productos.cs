@@ -2,8 +2,9 @@
 
 namespace ApiVentas
 {
-    public static class Productos
+    public class Productos
     {
         public static List<Producto> ProductosAgregados { get; set; } = [];
+
     }
 }
