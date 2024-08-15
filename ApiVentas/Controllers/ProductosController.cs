@@ -50,8 +50,20 @@ namespace ApiVentas.Controllers
 
             return Ok();
         }
+        [HttpDelete ("{id:int}")]
+        public ActionResult Eliminar(int id)
+        {
+            var productoEnLista = Productos.ProductosAgregados
+                .FirstOrDefault(p => p.Id == id);
 
+            if (productoEnLista == null)
+            {
+                return NotFound();
+            }
+            Productos.ProductosAgregados.Remove(productoEnLista);
 
+            return Ok();
+        }
     }
 }
 
