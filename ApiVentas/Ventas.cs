@@ -1,7 +1,8 @@
-﻿namespace ApiVentas
+﻿using ApiVentas.Entities;
+namespace ApiVentas
 {
     public class Ventas
     {
-        public static List<Ventas> VentasRealizadas { get; set; } = [];
+        public static List<Venta> VentasRealizadas { get; set; } = [];
     }
 }
