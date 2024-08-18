@@ -10,6 +10,7 @@ namespace ApiVentas.Controllers
         public VentasController()
         {
         }
+
         [HttpGet]
         public ActionResult<List<Venta>> ObtenerVentas()
         {
@@ -34,8 +35,8 @@ namespace ApiVentas.Controllers
             {
                 return NotFound();
             }
-            ventaEnLista.Clientes = venta.Clientes;
-            ventaEnLista.Productos = venta.Productos;
+            ventaEnLista.ClienteId = venta.ClienteId;
+            ventaEnLista.ProductoId = venta.ProductoId;
             ventaEnLista.Fecha = venta.Fecha;
             ventaEnLista.Total = venta.Total;
 
